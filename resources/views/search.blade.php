@@ -5,7 +5,7 @@
         <th scope="col">Name</th>
         <th scope="col">Price</th>
         <th scope="col">Qty</th>
-        <th scope="col">User</th> 
+        <th scope="col">Created By</th> 
         <th scope="col">Manufacturer</th>
         <th scope="col">Model</th>
         <th scope="col">Date of purchased</th>

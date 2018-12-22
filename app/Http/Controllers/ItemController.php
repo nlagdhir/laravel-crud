@@ -34,9 +34,9 @@ class ItemController extends Controller
         $user = Auth::user(); 
 
         if($user->items()->create($request->all())){
-            flash('Item created')->success();
+            flash('Item created.')->success();
         }else{
-            flash('Item not created')->error();
+            flash('Item not created.')->error();
         }
         return redirect(route('item.index'));
     }
@@ -79,12 +79,12 @@ class ItemController extends Controller
         $item = Item::find($id);
         if($item && $item->count() > 0){
             if($item->update($request->all())){
-                flash('Item updated')->success();
+                flash('Item updated.')->success();
             }else{
-                flash('Item not updated')->error();    
+                flash('Item not updated.')->error();    
             }
         }else{
-            flash('Item could not found!')->error();
+            flash('Item could not found.')->error();
         }
         return redirect(route('item.index'));
     }
