@@ -1,6 +1,6 @@
 # laravel-crud
 
-Laravel CRUD(Create, Read, Update and Delete) with auth. User add new items after complete registration and can view, update and delete from my items.
+Laravel CRUD(Create, Read, Update and Delete) with authorization using policy. User add new items after complete registration and can view, update and delete from my items.
 
 ### Features
 
