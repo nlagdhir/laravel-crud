@@ -10,7 +10,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Add new item') }}</div>
+                <div class="card-header">{{ __('Edit item') }}</div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('item.update',$item->id) }}" class="form-validate">
                         @method('PATCH')

@@ -35,17 +35,14 @@
 @section('js')
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script src="{{ asset('js/bootstrap-datepicker.min.js') }}"></script>
-<script>
+<script type="text/javascript">
 $(document).ready(function () {
-
     $('.datepicker').datepicker({
       autoclose: true,
       format: "dd-mm-yyyy",
       todayHighlight: true,
     });
-});
-
+});    
 </script>
-
 @endsection
 

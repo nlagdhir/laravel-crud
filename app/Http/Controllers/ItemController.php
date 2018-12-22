@@ -11,7 +11,7 @@ use App\Http\Requests\ItemRequest;
 class ItemController extends Controller
 {
     /**
-     * Display a listing of the items.
+     * Display a listing of the items for current user.
      */
     public function index()
     {   
@@ -20,8 +20,6 @@ class ItemController extends Controller
 
     /**
      * Show the form for creating a new item.
-     *
-     * @return \Illuminate\Http\Response
      */
     public function create()
     {
@@ -29,28 +27,22 @@ class ItemController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Store a newly created item in storage.
      */
     public function store(ItemRequest $request)
     {
         $user = Auth::user(); 
 
         if($user->items()->create($request->all())){
-            flash('item created')->success();
+            flash('Item created')->success();
         }else{
-            flash('item not created')->error();
+            flash('Item not created')->error();
         }
         return redirect(route('item.index'));
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  \App\Item  $item
-     * @return \Illuminate\Http\Response
+     * Display the specified item.
      */
     public function show($id)
     {
@@ -59,10 +51,7 @@ class ItemController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Item  $item
-     * @return \Illuminate\Http\Response
+     * Show the form for editing the specified item.
      */
     public function edit($id)
     {
@@ -82,32 +71,27 @@ class ItemController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified item in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Item  $item
-     * @return \Illuminate\Http\Response
      */
     public function update(ItemRequest $request, $id)
     {
         $item = Item::find($id);
         if($item && $item->count() > 0){
             if($item->update($request->all())){
-                flash('item updated')->success();
+                flash('Item updated')->success();
             }else{
-                flash('item not updated')->error();    
+                flash('Item not updated')->error();    
             }
         }else{
-            flash('item could not found!')->error();
+            flash('Item could not found!')->error();
         }
         return redirect(route('item.index'));
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified item from storage.
      *
-     * @param  \App\Item  $item
-     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {

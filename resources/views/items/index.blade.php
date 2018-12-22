@@ -95,6 +95,7 @@
 $(document).ready(function () {
     $('.party-view').DataTable();
 
+    // On Delete item click ask for confirmation then delete item
     $(document).on('click','.deleteItem',function(){
       if(confirm('Are you sure to want to delete item?')){
        var deleteUrl = $(this).data('url');
@@ -103,6 +104,7 @@ $(document).ready(function () {
       }
     });
 
+    // On view item click item details will be display in bootstrap popup
     $(document).on("click", ".showItemDetails", function (e) {
         $(".item-details-container").html("");
         var url = $(this).data('url');

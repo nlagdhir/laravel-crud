@@ -11,16 +11,10 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Auth::routes();
 
 Route::get('/','SearchController@index')->name('home');
 Route::middleware(['auth'])->group(function() {
-	Route::get('dashboard','DashboardController@index')->name('dashboard');
 	Route::resource('item','ItemController');
 });
 
-//Route::get('/home', 'HomeController@index')->name('home');

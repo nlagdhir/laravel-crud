@@ -25,7 +25,7 @@
       </tr>    
       @endforeach
       @else
-      <tr class="item-row">
+      <tr class="item-row text-center">
         <td colspan="7">No record found</td>
       </tr> 
       @endif

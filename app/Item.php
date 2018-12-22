@@ -24,7 +24,7 @@ class Item extends Model
     }
 
     /**
-     * Get the user's full name.
+     * Get date of purchased in other format.
      *
      * @return string
      */
