@@ -40,9 +40,9 @@
                                         <td>{{ config('setting')['models'][$item->model] }}</td>
                                         <td>{{ $item->date_of_purchased }}</td>
                                         <td>
-                                            <a href="javascript:void(0)" data-url="{{route('item.show', $item->id)}}" class="btn btn-success btn-xs showItemDetails"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
-                                            <a href="{{route('item.edit', $item->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                            <a href="javascript:void(0)" data-url="{{ route('item.destroy',$item->id) }}" class="btn btn-danger btn-xs deleteItem"><span class="glyphicon glyphicon-eye-open"></span></a>
+                                            <a href="javascript:void(0)" data-url="{{route('item.show', $item->id)}}" title="View" class="btn btn-success btn-xs showItemDetails"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                                            <a href="{{route('item.edit', $item->id)}}" class="btn btn-primary btn-xs" title="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                            <a href="javascript:void(0)" data-url="{{ route('item.destroy',$item->id) }}" title="Delete" class="btn btn-danger btn-xs deleteItem"><i class="fa fa-trash" aria-hidden="true"></i></a>
                                         </td>
                                     </tr>
                                     @endforeach

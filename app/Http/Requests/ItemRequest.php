@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Item;
+use Auth;
 
 class ItemRequest extends FormRequest
 {
@@ -13,7 +15,13 @@ class ItemRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        if($this->route()->action['as'] == 'item.store'){
+            return true;
+        }else{
+          $user = Auth::user();
+          $item = Item::find($this->route('item'));
+          return $user->can('update', $item);  
+        }
     }
 
     /**

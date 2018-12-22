@@ -14,7 +14,7 @@ class ItemController extends Controller
      * Display a listing of the items.
      */
     public function index()
-    {
+    {   
         return view('items.index');
     }
 
@@ -66,12 +66,19 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
+        $user = Auth::user();
+
         $item = Item::where('id',$id)->first();
-        if($item && $item->count() > 0){
-            return view('items.edit',compact('item'));
+        if ($user->can('view', $item)) {
+           if($item && $item->count() > 0){
+                return view('items.edit',compact('item'));
+            }else{
+                return redirect()->back();
+            } 
         }else{
-            return redirect()->back();
+            abort(403);
         }
+        
     }
 
     /**
