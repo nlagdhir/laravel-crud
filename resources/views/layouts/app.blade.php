@@ -22,6 +22,7 @@
             content:"*";
             color:red;
         }    
+        .pagination { display: none; }
     </style>
 </head>
 <body>

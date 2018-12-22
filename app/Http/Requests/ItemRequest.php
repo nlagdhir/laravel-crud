@@ -26,7 +26,7 @@ class ItemRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'qty' => 'required|numeric|max:999999999',
-            'price' => 'required|max:999999',
+            'price' => 'required|numeric|max:999999',
             'manufacturer' => 'required',
             'model' => 'required',
             'date_of_purchased' => 'required|date'

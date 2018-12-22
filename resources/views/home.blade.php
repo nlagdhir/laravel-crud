@@ -15,7 +15,6 @@
     <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Name</th>
       <th scope="col">Price</th>
       <th scope="col">Qty</th>
@@ -27,7 +26,6 @@
   <tbody class="Item-lists">
     @foreach($items as $key=> $item)
         <tr class="item-row">
-          <th scope="row">{{ $key+1 }}</th>
           <td>{{ $item->name }}</td>
           <td>{{ $item->price }}</td>
           <td>{{ $item->qty }}</td>

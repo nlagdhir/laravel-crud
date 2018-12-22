@@ -47,7 +47,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
 
                             <div class="col-md-6">
-                                <input id="price" type="float" max="999999.99" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" required>
+                                <input id="price" type="number" max="999999.99" class="form-control{{ $errors->has('price') ? ' is-invalid' : '' }}" name="price" value="{{ old('price') }}" required step="0.01" min="0">
 
                                 @if ($errors->has('price'))
                                     <span class="invalid-feedback" role="alert">

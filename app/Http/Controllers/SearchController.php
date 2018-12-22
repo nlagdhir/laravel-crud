@@ -24,13 +24,13 @@ class SearchController extends Controller
     			->orWhereRaw("items.price LIKE '%$filterText%'");
     		})
     		->groupBy('items.id')
-    		->paginate(1);
+    		->paginate(17);
     		$querystringArray = ['filterText' => $filterText];
 			$items->appends($querystringArray);
     		return View::make('search')->with(['items'=>$items])->render();
     	}
 
-    	$items = Item::latest()->paginate(1);
+    	$items = Item::latest()->paginate(17);
     	return view('home',compact('items'));
     }
 }
