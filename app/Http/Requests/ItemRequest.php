@@ -32,7 +32,7 @@ class ItemRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:190',
             'qty' => 'required|numeric|max:999999999',
             'price' => 'required|numeric|max:999999',
             'manufacturer' => 'required',
